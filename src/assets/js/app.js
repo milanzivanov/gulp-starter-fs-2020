@@ -24,3 +24,5 @@
 //   setInterval(randomColor, 8000);
 
 // });
+
+console.log("working");
