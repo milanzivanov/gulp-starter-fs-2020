@@ -27,7 +27,7 @@ section.banner-grid {
   .banner-bg-prop {       
       background-position: center bottom -40px;
       background-size: cover;
-      min-height: 75vh;
+      min-height: 80vh;
       width: 100%;
 
       @include  breakpoint (tablet) {
@@ -123,17 +123,6 @@ section.banner-grid {
           "slider-nav-bottom slider-nav-bottom slider-nav-bottom slider-nav-bottom slider-nav-bottom";
       grid-area: wrapper-banner;
 
-
-      // @include  breakpoint (tablet) {
-      //     grid-template-areas: 
-      //     "top-slider top-slider top-slider top-slider top-slider" 
-      //     "banner-slider-text banner-slider-text banner-slider-text right-banner-space right-banner-space" 
-      //     "banner-slider-text banner-slider-text banner-slider-text right-banner-space right-banner-space" 
-      //     "banner-slider-text banner-slider-text banner-slider-text right-banner-space right-banner-space" 
-      //     "banner-slider-text banner-slider-text banner-slider-text right-banner-space right-banner-space" 
-      //     "slider-nav-bottom slider-nav-bottom slider-nav-bottom slider-nav-bottom slider-nav-bottom";
-      // }
-
       @include  breakpoint (mobile) {
           grid-template-areas: 
           "banner-slider-text banner-slider-text banner-slider-text banner-slider-text banner-slider-text" 
@@ -151,10 +140,6 @@ section.banner-grid {
       align-items: flex-end;
 
       @include  breakpoint (mobile) {
-        background-color: yellowgreen;
-      }
-
-      @include  breakpoint (mobile) {
           align-items: center;
           justify-content: flex-start;
       }
@@ -167,6 +152,10 @@ section.banner-grid {
               .slider-nav_wrapper-bg {
                   display: flex;
                   overflow: hidden;
+
+                  @include  breakpoint (tablet) {
+                    padding: 0 0 0 30px;
+                  }
 
                   button.left-nav-custom,
                   button.right-nav-custom {
@@ -181,8 +170,8 @@ section.banner-grid {
                       outline: none;
 
                       @include  breakpoint (tablet) {
-                        width: 50px;
-                        height: 50px;
+                        width: 75px;
+                        height: 75px;
                       }
 
                       @include  breakpoint (mobile) {
@@ -206,8 +195,8 @@ section.banner-grid {
                     transform: translateX(100%);
 
                     @include  breakpoint (tablet) {
-                        width: 50px;
-                        height: 50px;
+                        width: 75px;
+                        height: 75px;
                     }
                     @include  breakpoint (mobile) {
                         width: 50px;
@@ -232,10 +221,7 @@ section.banner-grid {
 
       
       @include  breakpoint (tablet) {
-        background-color: orange;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        padding: 0 0 0 30px;
       }
 
       // banner text
@@ -243,10 +229,6 @@ section.banner-grid {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          
-          @include  breakpoint (tablet) {
-            background: #4d7568;
-          }
 
           @include  breakpoint (mobile) {
               height: 50vh;
@@ -335,7 +317,7 @@ section.banner-grid {
                   height: auto;
                 
                   @include  breakpoint (tablet) {
-                      max-width: 50%;
+                      max-width: 75%;
                   }
 
                   @include  breakpoint (mobile) {
