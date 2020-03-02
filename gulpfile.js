@@ -22,8 +22,6 @@ const gulp                      = require('gulp'),
       sourcemaps                = require('gulp-sourcemaps'),
       plumber                   = require('gulp-plumber'),
       sass                      = require('gulp-sass'),
-      less                      = require('gulp-less'),
-      stylus                    = require('gulp-stylus'),
       autoprefixer              = require('gulp-autoprefixer'),
       minifyCss                 = require('gulp-clean-css'),
       babel                     = require('gulp-babel'),
@@ -62,30 +60,6 @@ gulp.task('sass', () => {
     .pipe(sourcemaps.init())
       .pipe(plumber())
       .pipe(sass())
-      .pipe(autoprefixer())
-      .pipe(minifyCss())
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(dist_assets_folder + 'css'))
-    .pipe(browserSync.stream());
-});
-
-gulp.task('less', () => {
-  return gulp.src([ src_assets_folder + 'less/**/!(_)*.less'], { since: gulp.lastRun('less') })
-    .pipe(sourcemaps.init())
-      .pipe(plumber())
-      .pipe(less())
-      .pipe(autoprefixer())
-      .pipe(minifyCss())
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(dist_assets_folder + 'css'))
-    .pipe(browserSync.stream());
-});
-
-gulp.task('stylus', () => {
-  return gulp.src([ src_assets_folder + 'stylus/**/!(_)*.styl'], { since: gulp.lastRun('stylus') })
-    .pipe(sourcemaps.init())
-      .pipe(plumber())
-      .pipe(stylus())
       .pipe(autoprefixer())
       .pipe(minifyCss())
     .pipe(sourcemaps.write('.'))
@@ -134,9 +108,9 @@ gulp.task('vendor', () => {
     .pipe(browserSync.stream());
 });
 
-gulp.task('build', gulp.series('clear', 'html', 'sass', 'less', 'stylus', 'js', 'images', 'vendor'));
+gulp.task('build', gulp.series('clear', 'html', 'sass', 'js', 'images', 'vendor'));
 
-gulp.task('dev', gulp.series('html', 'sass', 'less', 'stylus', 'js'));
+gulp.task('dev', gulp.series('html', 'sass', 'js'));
 
 gulp.task('serve', () => {
   return browserSync.init({
@@ -163,8 +137,6 @@ gulp.task('watch', () => {
     src_folder + '**/*.html',
     src_assets_folder + 'sass/**/*.sass',
     src_assets_folder + 'scss/**/*.scss',
-    src_assets_folder + 'less/**/*.less',
-    src_assets_folder + 'stylus/**/*.styl',
     src_assets_folder + 'js/**/*.js'
   ];
 

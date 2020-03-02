@@ -4,15 +4,236 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Gulp Starter Kit</title>
-  <link rel="stylesheet" href="/assets/css/pages/index.css">
+  <title>fs test</title>
+  <link rel="stylesheet" href="./assets/css/pages/index.css">
 </head>
 <body>
-  <h1 class="title">Gulp Starter Kit 2020</h1>
+<!-- /////////// -->
+<!-- header && nav -->
+<header class="header" id="header-js">
+  <div class="wrapper-inner header__content">
+      <div class="header_left">
+          <img class="header_left-logo" src="./assets/images/Ipsum-s.png" alt="main logo">
+          <h2 class="header_left-browse">
+              <span>Browse products</span>
+          </h2>
+          <h3 class="header_left-info">
+              <span class="name">Company info</span>
+              <svg class="svg__icon">
+                  <use xlink:href="./assets/images/sprites.svg#icon-chevron-small-down"></use>
+              </svg>
+          </h3>
+      </div>
 
-  <p class="description"><strong>
-    A simple Gulp 4 Starter Kit for modern web development.
-  </strong></p>
+      <nav class="nav-right__company">
+          <div class="nav-right__total">
+              <div class="nav-right-total_box">
+                  <svg class="svg__icon svg__icon--user">
+                      <use xlink:href="./assets/images/sprites.svg#icon-shopping-cart"></use>
+                  </svg>
+                  <span class="nav-right__notification">
+                      <span>2</span>
+                  </span>
+              </div>
+              <div class="nav-right__text">
+                  <span>Total</span>
+                  <span class="nav-right__sum">
+                      $11.800,00
+                  </span>
+              </div>
+          </div>
+
+          <!-- item added to cart -->
+          <div class="item-added-to-car">
+              <p>Item added to cart</p>
+              <span class="close-btn-cart-js">
+                  <svg class="svg__icon">
+                      <use xlink:href="./assets/images/sprites.svg#icon-cross"></use>
+                  </svg>
+              </span>
+          </div>
+
+          <div class="nav-user">
+              <svg class="svg__icon svg__icon-color">
+                  <use xlink:href="./assets/images/sprites.svg#icon-user"></use>
+              </svg>
+              <span>user company</span>
+              <svg class="svg__icon">
+                  <use xlink:href="./assets/images/sprites.svg#icon-chevron-down"></use>
+              </svg>
+          </div>
+
+      </nav>
+  </div>
+</header>
+
+
+<!-- /////////// -->
+<!-- banner grid new -->
+<section class="banner-grid">
+    <div class="banner-grid-bg-left banner-bg-prop">
+    </div>
+    <div class="banner-grid-bg-right banner-bg-prop">
+    </div>
+
+    <div class="grid-container">
+        <div class="left-wrapper-slider-pagination">
+            <!-- custom pagination position -->
+            <div class="my-pagination"></div>
+        </div>
+        <div class="wrapper-banner">
+            <div class="slider-nav-bottom">
+
+                <!-- slider-nav-bottom -->
+                <div class="slider-nav_wrapper">
+                    <div class="slider-nav_wrapper-bg">
+                        <button class="left-nav-custom">
+                            <svg class="svg__icon svg__properties">
+                                <use xlink:href="./assets/images/sprites.svg#icon-arrow-long-left"></use>
+                            </svg>                        
+                        </button>
+                        <button class="right-nav-custom">
+                            <svg class="svg__icon svg__properties">
+                                <use xlink:href="./assets/images/sprites.svg#icon-arrow-long-right"></use>
+                            </svg>                      
+                        </button>
+                        <div class="slider-nav-hover_img">
+                            <img src="./assets/images/alfred-sung.png" alt="alfred sung">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="banner-slider-text">
+                
+            <!-- banner-slider-text -->
+            <div class="slick-slider slick-slider__content">
+                <div>
+                    <div class="text-banner-box">
+                        <div class="text-banner-box_left">
+                            <h5>G-Shock</h5>
+                            <h1>Venice silver<br> automatic</h1>
+    
+                            <div class="banner-b__btn--box">
+                                <a href="#" class="banner-btn__view">
+                                    View watch
+                                </a>
+    
+                                <a href="#" class="banner-btn__explore">
+                                    <span class="explore">Explore G-Shock</span>
+                                    <span>
+                                        <svg class="svg__icon">
+                                            <use xlink:href="./assets/images/sprites.svg#icon-arrow-long-right"></use>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="text-banner-box_right-bg">
+                            <img src="./assets/images/iwc-clock-big.png" alt="alfred sung">
+                        </div>
+                    </div>
+                </div>
+                <!-- <div>
+                    <div class="text-banner-box">
+                        <div class="text-banner-box_left">
+                            <h5>Breil</h5>
+                            <h1>Venice silver<br> automatic</h1>
+    
+                            <div class="banner-b__btn--box">
+                                <a href="#" class="banner-btn__view">
+                                    View watch
+                                </a>
+    
+                                <a href="#" class="banner-btn__explore">
+                                    <span class="explore">Explore G-Shock</span>
+                                    <span>
+                                        <svg class="svg__icon svg__properties">
+                                            <use xlink:href="./assets/images/sprites.svg#icon-arrow-long-right"></use>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="text-banner-box_right-bg">
+                            <img src="./assets/images/iwc-clock-big.png" alt="alfred sung">
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div>
+                    <div class="text-banner-box">
+                        <div class="text-banner-box_left">
+                            <h5>Sector</h5>
+                            <h1>Venice silver<br> automatic</h1>
+    
+                            <div class="banner-b__btn--box">
+                                <a href="#" class="banner-btn__view">
+                                    View watch
+                                </a>
+    
+                                <a href="#" class="banner-btn__explore">
+                                    <span class="explore">Explore G-Shock</span>
+                                    <span>
+                                        <svg class="svg__icon svg__properties">
+                                            <use xlink:href="./assets/images/sprites.svg#icon-arrow-long-right"></use>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="text-banner-box_right-bg">
+                            <img src="./assets/images/iwc-clock-big.png" alt="alfred sung">
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div>
+                    <div class="text-banner-box">
+                        <div class="text-banner-box_left">
+                            <h5>Seico</h5>
+                            <h1>Venice silver<br> automatic</h1>
+    
+                            <div class="banner-b__btn--box">
+                                <a href="#" class="banner-btn__view">
+                                    View watch
+                                </a>
+    
+                                <a href="#" class="banner-btn__explore">
+                                    <span class="explore">Explore G-Shock</span>
+                                    <span>
+                                        <svg class="svg__icon svg__properties">
+                                            <use xlink:href="./assets/images/sprites.svg#icon-arrow-long-right"></use>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="text-banner-box_right-bg">
+                            <img src="./assets/images/iwc-clock-big.png" alt="alfred sung">
+                        </div>
+                    </div>
+                </div> -->
+
+
+            </div>
+        
+        </div>
+            <div class="top-slider">
+                <!-- top-slider -->
+            </div>
+            <div class="right-banner-space">
+                <!-- right-banner-space -->
+            </div>
+            </div>
+            <div class="right-wrapper-space">
+                <!-- right-wrapper-space -->
+            </div>
+    </div>
+</section>
 
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300" rel="stylesheet">
   <script async src="/assets/js/all.js"></script>

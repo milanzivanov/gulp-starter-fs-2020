@@ -1,0 +1,60 @@
+root {
+  --color-primary: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+*,
+**::before,
+**::after {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-primary);
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.wrapper-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+
+  @include  breakpoint (tablet) {
+    max-width: 1024px;
+  }
+}
+
+.wrapper-full {
+  max-width: 100%;
+  margin: 0 auto;
+
+  // @include  breakpoint (mobile) {
+  // }
+}
+
+//
+.svg__icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+  /* ==========================================
+  Single-colored icons can be modified like so: */
+  .name {
+    font-size: 17px;
+    color: red;
+  }
