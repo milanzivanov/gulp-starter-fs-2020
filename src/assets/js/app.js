@@ -1,28 +1,47 @@
-// import axios from 'axios';
+$(document).ready(function() {
+    'use strict';
 
-// window.addEventListener('load', () => {
+//     // adding shadow on scroll and sticky
+    $(window).scroll(function(){
+        let header = $('#header-js'),
+            scroll = $(window).scrollTop();
+      
+        if (scroll >= 100) { 
+            header.addClass('sticky-active');
+        } else {
+            header.removeClass('sticky-active');
+        }
+    });
 
-//   const api = 'http://www.colr.org/json/color/random';
-//   const body = document.querySelector('body');
+//     // open added cart 
+    $(".nav-right__total, .close-btn-cart-js").on("click", function(e) {
+        $(".item-added-to-car").toggleClass("active");
 
-//   function randomColor() {
-//     axios.get(api).then(res => {
-//       let color = res.data.colors[0].hex;
+        
+    });
+      
+//     // open my cart
+    let btnOpenMyCart = $(".my-cart__open-js");
+    btnOpenMyCart.on("click", function(e) {
+      $(".cart-content-js").addClass("open-active");
+    });
+    // close my cart
+    let btnCloseMyCart = $(".my-cart-close-js");
+    btnCloseMyCart.on("click", function(e) {
+      $(".cart-content-js").removeClass("open-active");
+    });
 
-//       if (!color) {
-//         console.error('Random color could not be fetched.');
-//       }
+    // Slick
+    $('.slick-slider').slick({
+        arrows: true,
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 10000,
+        cssEase: 'ease-out',
+        prevArrow: $(".left-nav-custom"),
+        nextArrow: $(".right-nav-custom"),
+        appendDots: $(".my-pagination")
+    });
 
-//       color = '#' + color;
-
-//       body.style.backgroundColor = color;
-//     }).catch(() => console.error('Random color could not be fetched.'));
-//   }
-
-//   randomColor();
-
-//   setInterval(randomColor, 8000);
-
-// });
-
-console.log("working");
+    console.log("working");
+});
