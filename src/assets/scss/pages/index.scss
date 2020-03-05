@@ -423,3 +423,460 @@ svg.svg__icon.svg__color {
   }
 }
 
+
+////////////
+// timeline grid
+.grid-container__timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+      "timeline-top-left-bg1 timeline-top-left-bg1 timeline-top-right timeline-top-right" 
+      "timeline-top-left-bg1 timeline-top-left-bg1 timeline-top-right timeline-top-right" 
+      "timeline-bottom-left timeline-bottom-left timeline-bottom-right-bg2 timeline-bottom-right-bg2" 
+      "timeline-bottom-left timeline-bottom-left timeline-bottom-right-bg2 timeline-bottom-right-bg2";
+  transition: all 0.3s ease-in-out;
+
+@include  breakpoint (tablet) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "timeline-top-left-bg1 timeline-top-left-bg1"  
+    "timeline-bottom-right-bg2 timeline-bottom-right-bg2";}
+
+  @include  breakpoint (mobile) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+      "timeline-top-left-bg1 timeline-top-left-bg1"  
+      "timeline-bottom-right-bg2 timeline-bottom-right-bg2";
+  }
+  
+  .timeline-top-right {
+      grid-area: timeline-top-right;
+      background-color: white;
+  }
+  
+  .timeline-bottom-left { 
+      grid-area: timeline-bottom-left;
+      background-color: white;
+  }
+  
+  .timeline-top-left-bg1 { 
+      grid-area: timeline-top-left-bg1;    
+      background: url(../../../assets/images/girl-with-clock.jpg) no-repeat #fff;
+  }
+  
+  .timeline-bottom-right-bg2 { 
+      grid-area: timeline-bottom-right-bg2;    
+      background: url(../../../assets/images/hand-with-clock.jpg) no-repeat #fff;
+  }
+  
+  .timeline-bg1__hp {
+      background-position: center;
+      background-size: cover;
+      min-height: 70vh;
+      width: 100%;
+  }
+
+  // timeline wrapper text
+  .timeline-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+
+      .timeline-box__text {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+
+          
+          .timeline-box__text-width {
+              flex: 1;
+              width: 100%;
+              align-items: center;
+              justify-content: flex-end;
+              display: flex;
+
+              //
+              @include  breakpoint (tablet) {
+                  justify-content: center;
+              }
+              //
+              @include  breakpoint (mobile) {
+                  justify-content: center;
+              }
+              
+              .timeline-box_position {
+                  width: 55%;
+                  background: #f5f2ee;
+                  padding: 90px 40px;
+                  
+                  @include  breakpoint (tablet) {
+                      width: 80%;
+                      padding: 20px;
+                  }
+
+                  @include  breakpoint (mobile) {
+                      padding: 20px;
+                  }
+
+                  h3 {
+                      font-family: 'butlerregular';
+                      font-size: 60px;
+                      padding: 0 0 80px 0;
+                      color: $svg-color;;
+                      font-weight: bold;
+
+                      @include  breakpoint (tablet) {
+                          padding: 0 0 20px 0;
+                          font-size: 40px;
+                      }
+
+                      @include  breakpoint (mobile) {
+                          padding: 0 0 20px 0;
+                          font-size: 30px;
+                      }
+                  }
+              
+                  p {
+                      font-family: 'Lato', sans-serif;
+                      font-size: 18px;
+                      color: $border-blue-b;
+
+                      @include  breakpoint (mobile) {
+                          font-size: 13px;
+                      }
+                  }
+              }
+
+              .timeline-box_position--blue {
+                  background: #2f4061;            
+                  p, h3 {
+                      color: $bg-white;
+                  }                 
+              } 
+          }
+
+          .timeline-box__left {
+              justify-content: flex-start;
+
+              @include  breakpoint (tablet) {
+                  justify-content: center;
+              }
+
+              @include  breakpoint (mobile) {
+                  justify-content: center;
+              }
+          }
+      }
+  }
+}
+
+///////////
+// devider
+.devider-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .devider-line__center {
+      height: 5px;
+      background-color: $input-border-color;
+      width: 150px;
+  }
+}
+
+
+////////////
+// watch properties
+section.properties-content {
+    background-color: $bg-white;
+    margin-bottom: 45px;
+    .properties-content__box {
+        display: flex;
+
+        @include  breakpoint (mobile) {
+            flex-wrap: wrap;
+        }
+        
+        button.properties-content__box--buttons {
+            justify-content: space-between;
+            display: flex;
+            align-items: center;
+            margin-right: 30px;
+            padding: 10px 20px;
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+            width: 155px;
+            border: 1px solid $input-border-color;
+
+            @include  breakpoint (mobile) {
+                margin: 10px;
+            }
+
+            span.properties-model {
+                font-size: 18px;
+                color: $svg-color;
+            }
+
+            svg.svg__icon.svg__properties {
+                cursor: pointer;
+                color: $svg-color;
+                height: 20px;
+                width: 20px;
+            }
+        }
+
+    }
+}
+
+////////////
+// cart list
+.cart__content {
+    position: relative;
+    background-color: $bg-white;
+    border-bottom: 4px solid $border-blue-b;
+
+    // my cart list js
+    .cart-content-js {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 300px;
+        background-color: $bg-white;
+        border-left: 1px solid $input-border-color;
+    }
+
+    .cart-content-js.open-active {
+        display: flex;
+    }
+}
+
+.cart-table {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+
+    @include  breakpoint (mobile) {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+.cart-table__bb {
+    border-bottom: 1px solid #dbcdc4;
+}
+
+
+// added footer
+.cart-added__prop {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include  breakpoint (mobile) {
+        flex-direction: column;
+    }
+
+    .cart-added__prop--svg {
+        .svg__icon--alt {
+            color: #926d56;
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+}
+
+.cart-added {
+    border: 1px solid $input-border-color;
+    margin: 0 0 30px 0;
+}
+
+.cart-table__added-b {
+    border-bottom: 1px solid $input-border-color;
+
+    .cart-added__prop {
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+}
+
+.cart-table__box {
+    flex: 1;
+
+    @include  breakpoint (mobile) {
+        flex: 100%;
+        @include flexCHV;
+    }
+
+    img.cart-table__img {
+        @include  breakpoint (mobile) {
+            padding: 10px 0;
+        }
+    }
+
+    span {
+        display: flex;
+        color: #7583a0;
+        font-size: 16px;
+        text-transform: capitalize;
+
+        @include  breakpoint (mobile) {
+            padding: 0 0 20px 0;
+            @include flexCHV;
+        }
+    }
+
+    // add btn box
+    .cart-table__add {
+        display: flex;
+        flex-direction: column;
+
+        @include  breakpoint (mobile) {
+            width: 100%;
+        }
+
+        span.low-on-stock {
+            color: #d47517;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 0 5px 0;
+
+            span.warning-stock {
+                background-color: #d47517;
+                color: $bg-white;
+                padding: 5px;
+                height: 5px;
+                width: 5px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                margin-right: 5px;
+                text-transform: capitalize;
+            }
+        }
+        // hide low stock
+        .low-on-stock__hide {
+            display: none !important;
+        }
+
+
+        .cart-table__btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #2f4061;
+            cursor: pointer;
+
+            padding: 15px;
+            margin: 0 0 25px 0;
+
+            span.cart-table__btn--add {
+                color: #fff;
+                padding: 0 10px 0 0;
+                font-size: 16px;
+            }
+
+            .svg__icon--cart {
+                color: #fff;
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .cart-table__btn--bgcn {
+            background-color: transparent;
+
+            .cart-table__btn--nc {
+                text-transform: uppercase;
+                font-size: 11px !important;
+                color: #2f4061 !important;
+            }
+
+            .svg__icon--nstock {
+                color:#7c879b !important;
+            }
+        }
+
+        // added btn
+        .cart-table__btn--added {
+            background-color: #536b94;
+        }
+    }
+
+    .cart-table__box--ad {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        @include  breakpoint (mobile) {
+            justify-content: center;
+        }
+
+    }
+}
+
+// extra space for brand
+.cart-table__box--bs {
+    flex: 2;
+
+    .cart-table__brand-box {
+        color: #304061;
+
+        h5 {
+            text-transform: uppercase;
+            font-size: 18px;
+
+            @include  breakpoint (mobile) {
+                text-align: center;
+            }
+        }
+
+        span {
+            color: $svg-color;;
+            font-size: 16px;
+        }
+    }
+}
+
+.cart-table__qiy {
+    display: flex;
+    align-items: center;
+
+    span {
+        padding: 0 5px 0 0;
+        color: #af8b75;
+    }
+
+    .cart-table__up-down {
+        display: flex;
+        flex-direction: column;
+
+        .svg__icon--cart {
+            color: indianred;
+            // mixin
+            width: 20px;
+            height: 20px;
+        }
+
+        .svg__icon--rotate {
+            transform: rotate(180deg);
+        }
+    }
+}
+
